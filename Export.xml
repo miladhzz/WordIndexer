@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<export>
+  <marjas>
+    <marja index="1" content="test">
+      <zamir index="1">test</zamir>
+      <zamir index="1">test</zamir>
+      <zamir index="1">test</zamir>
+    </marja>
+    <marja index="2" content="test">
+      <zamir index="1">test</zamir>
+      <zamir index="1">test</zamir>
+      <zamir index="1">test</zamir>
+    </marja>
+    <marja index="3" content="test">
+      <zamir index="1">test</zamir>
+      <zamir index="1">test</zamir>
+      <zamir index="1">test</zamir>
+    </marja>
+  </marjas>
+</export>
