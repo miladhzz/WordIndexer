@@ -13,3 +13,7 @@ obj/Debug/WordIndexer.csprojResolveAssemblyReference.cache
 obj/Debug/WordIndexer.pdb
 obj/Debug/WordIndexer.Properties.Resources.resources
 WordIndexer.csproj.user
+obj/Debug/DesignTimeResolveAssemblyReferences.cache
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+obj/Debug/WordIndexer.csproj.CoreCompileInputs.cache
+*.cache

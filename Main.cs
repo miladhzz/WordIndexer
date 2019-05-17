@@ -23,14 +23,7 @@ namespace BaseIndexer
         private Dictionary<int, string> _wordList;
         private void Form1_Load(object sender, EventArgs e)
         {
-            Console.WriteLine("Start" + DateTime.Now);
-            StreamReader s = new StreamReader(@"D:\Saideh\MirasText\MirasTextEditN2.txt");
-            var charCount = new System.IO.StreamReader(@"D:\Saideh\MirasText\MirasTextEditN2.txt").ReadToEnd().Replace("\r\n", "\r").Length;
-            _wordList = NextWord2(s, charCount);
-            progressBar1.Minimum = 0;
-            progressBar1.Maximum = _wordList.Count;
-            s.Close();
-            backgroundWorker1.RunWorkerAsync();
+            
         }
         private int _wordIndex = -1;
         private Dictionary<int, string> NextWord2(StreamReader stremReader, int charCount)
@@ -333,7 +326,7 @@ namespace BaseIndexer
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            progressBar1.Value = e.ProgressPercentage;
+            toolStripProgressBar1.Value = e.ProgressPercentage;
             
         }
 
@@ -408,6 +401,36 @@ namespace BaseIndexer
                 }
             }
             return retVal;
+        }
+
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnImport_Click(sender, e);
+        }
+
+        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnExport_Click(sender, e);
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var openFileDialog= new OpenFileDialog()
+            {
+                Filter= "(*.txt)|*.txt"
+            };            
+            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+                StreamReader s = new StreamReader(openFileDialog.FileName);
+                var charCount = new System.IO.StreamReader(openFileDialog.FileName).ReadToEnd().Replace("\r\n", "\r").Length;
+                _wordList = NextWord2(s, charCount);
+                toolStripProgressBar1.Minimum = 0;
+                toolStripProgressBar1.Maximum = _wordList.Count;
+                s.Close();
+                backgroundWorker1.RunWorkerAsync();
+            }
+           
         }
     }
 }
